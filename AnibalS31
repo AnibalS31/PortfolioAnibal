@@ -1,17 +1,71 @@
-# ¡Hola! 👋 Soy Aníbal Solar  
+# Portafolio Virtual – [Tu Nombre]
 
-🚀 Estudiante/Ingeniero en Control e Instrumentación | Apasionado por Linux, Redes y Seguridad  
+Este repositorio contiene mi **portafolio personal online**, creado como parte del desafío evaluado.  
+Aquí muestro mi presentación profesional, mis proyectos más relevantes y mis medios de contacto.
 
-## 🛠️ Tecnologías que uso
-- Lenguajes: Python, C, JavaScript
-- Sistemas: Linux (Fedora, Ubuntu), Windows Server
-- Herramientas: Docker, Git, AWS
+---
 
-## 📂 Proyectos destacados
-- 🔐 [Firewall con IPTables](https://github.com/usuario/firewall-iptables)
-- ☁️ [Infraestructura en AWS para Telemedicina](https://github.com/usuario/aws-telemedicina)
-- 🤖 [Automatización en TIA Portal](https://github.com/usuario/tia-portal)
+## 1. Justificación del Repositorio
+Este repositorio fue creado para:
+- Practicar el uso de **GitHub Pages** como herramienta de publicación en la nube.
+- Aplicar **buenas prácticas de desarrollo web** con HTML y CSS.
+- Contar con un espacio online que centralice mi información profesional, mi formación y mis proyectos.
 
-## 📫 Contáctame
-- LinkedIn: [linkedin.com/in/anibalsolar](https://linkedin.com/in/anibalsolar)
-- Email: anibal@ejemplo.com
+El portafolio permite a potenciales empleadores, docentes o colegas conocer más sobre mí de manera rápida y accesible.
+
+---
+
+## 2. Ejemplo de Otro Portafolio en GitHub
+Un ejemplo de portafolio que me sirvió de referencia:  
+👉 [https://github.com/emmabostian/developer-portfolios](https://github.com/emmabostian/developer-portfolios)  
+
+Este repositorio recopila diversos portafolios de desarrolladores, con buenas ideas de estructura y estilo.
+
+---
+
+## 3. Proyecto Incorporado
+En mi portafolio incluyo un **proyecto destacado de la carrera** (puedes reemplazar este ejemplo con tu proyecto real):
+
+- 🔗 [Proyecto de Redes y Seguridad con IPTables](https://github.com/tuusuario/proyecto-redes)  
+  **Descripción**: Implementación de reglas de firewall en Linux para controlar el tráfico de red, como parte de un laboratorio práctico de seguridad informática.  
+  **Lo aprendido**: Configuración de reglas de red, importancia del filtrado de paquetes y experiencia con entornos de servidor Fedora.
+
+---
+
+## 4. Biografía Personal
+**¿Quién eres?**  
+Soy [Tu Nombre], estudiante y entusiasta de la tecnología, con interés en el área de [ejemplo: redes, ciberseguridad, desarrollo web].  
+
+**¿De dónde eres?**  
+[Ciudad, País].  
+
+**¿A qué te dedicas?**  
+Actualmente soy [ejemplo: estudiante de Ingeniería en Control e Instrumentación Industrial / profesional en el área de TI].  
+
+**¿Cuál es tu formación?**  
+Formación académica en [tu carrera o cursos].  
+
+**¿Experiencia previa?**  
+He participado en proyectos de [ejemplo: automatización, redes, servidores, desarrollo de aplicaciones], lo que me ha permitido aplicar conocimientos técnicos en entornos prácticos.  
+
+---
+
+## 5. Buenas Prácticas de Desarrollo en el Portafolio
+Al diseñar este portafolio se aplicaron buenas prácticas como:
+- Uso de **HTML semántico** (`header`, `nav`, `section`, `footer`) para mejorar la accesibilidad.  
+- Estructura clara y ordenada en el contenido.  
+- Código limpio, indentado y comentado cuando es necesario.  
+- Diseño responsive básico para correcta visualización en distintos dispositivos.  
+- Separación lógica de secciones: *Sobre mí, Proyectos, Contacto*.  
+
+---
+
+## 6. Contacto
+- 📧 Email: [tucorreo@ejemplo.com](mailto:tucorreo@ejemplo.com)  
+- 🔗 LinkedIn: [linkedin.com/in/tuusuario](https://linkedin.com/in/tuusuario)  
+- 💻 GitHub: [github.com/tuusuario](https://github.com/tuusuario)  
+
+---
+
+📌 **Nota**: Este portafolio está disponible públicamente en GitHub Pages en el siguiente enlace:  
+👉 [https://tuusuario.github.io/tu-repositorio/](https://tuusuario.github.io/tu-repositorio/)

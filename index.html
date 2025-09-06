@@ -1,126 +1,282 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio de [Tu Nombre]</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio — Aníbal Solar</title>
+  <meta name="description" content="Portafolio de Aníbal Solar: proyectos, experiencia y contacto." />
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:title" content="Portafolio — Aníbal Solar" />
+  <meta property="og:description" content="Proyectos, desafíos y contacto." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.png" />
+  <link rel="icon" href="/favicon.ico" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background: #f4f4f9;
-      color: #333;
-      scroll-behavior: smooth;
+    :root{
+      --bg: #0b0f1a;
+      --bg2: #0f1628;
+      --text: #e6e9ef;
+      --muted: #9aa4b2;
+      --brand: #7c9cff; /* celeste violeta */
+      --brand-2: #00d4ff; /* acento cian */
+      --card: #111726cc;
+      --stroke: #1f2a44;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 20px;
+      --max: 1100px;
     }
-    header {
-      background: #1f2937;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text); background: radial-gradient(1000px 600px at 10% -10%, #18213c 0%, transparent 60%),
+                 radial-gradient(800px 500px at 100% 0%, #0f2647 0%, transparent 60%),
+                 linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      letter-spacing:.2px;
     }
-    header h1 {
-      margin: 0;
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin-inline:auto; padding:0 20px}
+    /* Nav */
+    .nav{
+      position:sticky; top:0; z-index:100; backdrop-filter:saturate(180%) blur(10px);
+      background:linear-gradient(180deg, #0b0f1add 0%, #0b0f1a99 100%);
+      border-bottom:1px solid var(--stroke);
     }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-      display: none;
-    }
-    section.activo {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-    h2 {
-      color: #1f2937;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #1f2937;
-      color: #fff;
-      margin-top: 20px;
-    }
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .brand{display:flex; gap:12px; align-items:center; font-weight:700; letter-spacing:.5px}
+    .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(45deg, var(--brand), var(--brand-2)); box-shadow:0 0 18px #00d4ff80}
+    .menu{display:flex; gap:18px}
+    .menu a{padding:8px 12px; border-radius:12px; color:var(--muted)}
+    .menu a.active,.menu a:hover{color:var(--text); background: #0d1a33; border:1px solid #1c2a4f}
+    /* Hero */
+    .hero{padding:96px 0 60px; position:relative}
+    .hero h1{font-size: clamp(32px, 6vw, 54px); margin:0 0 10px; line-height:1.1}
+    .hero p.lead{font-size: clamp(16px, 2.2vw, 20px); color:var(--muted); margin:0 0 26px}
+    .cta{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; border:1px solid var(--stroke); background:#0e1730; box-shadow:var(--shadow); transition:transform .15s ease}
+    .btn:hover{transform: translateY(-2px)}
+    .btn.primary{background:linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%); color:#0a0f1a; border:none; font-weight:700}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:22px}
+    .chip{padding:6px 10px; border-radius:999px; border:1px solid var(--stroke); color:var(--muted); background:#0f1731}
+    /* Cards grid */
+    .grid{display:grid; gap:18px; grid-template-columns: repeat(auto-fill, minmax(260px,1fr))}
+    .card{background:linear-gradient(180deg, #0f1628 0%, #0b0f1a 100%); border:1px solid var(--stroke); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column}
+    .card img{width:100%; height:160px; object-fit:cover; border-bottom:1px solid var(--stroke)}
+    .card .content{padding:18px}
+    .card .title{font-weight:700; font-size:18px; margin:0 0 6px}
+    .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+    .tag{font-size:12px; padding:4px 8px; border-radius:999px; border:1px solid var(--stroke); color:var(--muted)}
+    .card .actions{margin-top:auto; padding:16px 18px; display:flex; gap:10px; border-top:1px solid var(--stroke)}
+    .link{display:inline-flex; gap:8px; align-items:center; padding:8px 12px; border-radius:12px; border:1px solid var(--stroke)}
+    .link:hover{background:#0d1a33}
+    /* Sections */
+    section{padding:70px 0}
+    .section-title{font-size: clamp(20px, 3vw, 28px); margin:0 0 14px}
+    .section-desc{color:var(--muted); margin:0 0 26px}
+    /* About */
+    .about{display:grid; gap:26px; grid-template-columns:1.1fr .9fr; align-items:center}
+    .about img{width:100%; border-radius:var(--radius); border:1px solid var(--stroke)}
+    @media (max-width:880px){.about{grid-template-columns:1fr}}
+    /* Footer */
+    footer{padding:26px 0 60px; color:var(--muted); border-top:1px solid var(--stroke)}
+    .foot{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between}
+    .social{display:flex; gap:10px}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px; border:1px solid var(--stroke); padding:6px 10px; border-radius:8px; background:#0f1731}
+    /* Nice focus */
+    :focus-visible{outline: 2px solid var(--brand-2); outline-offset:3px; border-radius:10px}
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aníbal Solar",
+    "url": "https://tu-usuario.github.io",
+    "jobTitle": "Ingeniero en Control e Instrumentación / Front‑End Junior",
+    "sameAs": ["https://github.com/tu-usuario","https://www.linkedin.com/in/tu-perfil"],
+    "knowsAbout": ["JavaScript","HTML","CSS","Git","GitHub","PLC","RS485","Modbus"],
+    "description": "Portafolio de proyectos, desafíos y contacto."
+  }
+  </script>
 </head>
 <body>
-  <header>
-    <h1>Portafolio de [Tu Nombre]</h1>
-    <nav>
-      <a onclick="mostrar('sobre-mi')">Sobre mí</a>
-      <a onclick="mostrar('proyectos')">Proyectos</a>
-      <a onclick="mostrar('contacto')">Contacto</a>
-    </nav>
+  <!-- NAV -->
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="container nav-inner">
+      <a href="#inicio" class="brand"><span class="dot" aria-hidden="true"></span> <span>Aníbal Solar</span></a>
+      <div class="menu" role="menubar">
+        <a href="#inicio" role="menuitem" class="active">Inicio</a>
+        <a href="#sobre-mi" role="menuitem">Sobre mí</a>
+        <a href="#proyectos" role="menuitem">Proyectos</a>
+        <a href="#contacto" role="menuitem">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="inicio" class="hero">
+    <div class="container">
+      <p class="chip" aria-label="rol">Estudiante | Ciberseguridad · Front‑End</p>
+      <h1>Construyo soluciones simples y robustas para problemas reales.</h1>
+      <p class="lead">Soy <strong>Aníbal</strong>, Ingeniero en Control e Instrumentación y desarrollador front‑end junior. Aquí comparto mis proyectos, desafíos y aprendizajes.
+      </p>
+      <div class="cta">
+        <a href="#proyectos" class="btn primary">Ver proyectos</a>
+        <a href="#sobre-mi" class="btn" aria-label="Saber más sobre mí">Sobre mí</a>
+      </div>
+      <div class="badges" aria-label="tecnologías">
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">Git / GitHub</span>
+        <span class="chip">PLC · RS485 · Modbus</span>
+      </div>
+    </div>
   </header>
 
-  <section id="sobre-mi" class="activo">
-    <h2>Sobre mí</h2>
-    <p><strong>¿Quién eres?</strong> Soy [tu nombre], apasionado por la tecnología y el desarrollo digital.</p>
-    <p><strong>¿De dónde eres?</strong> [Ciudad, país].</p>
-    <p><strong>¿A qué te dedicas?</strong> [Ejemplo: Estudiante de Ingeniería en Control e Instrumentación / Desarrollador web / etc.].</p>
-    <p><strong>¿Cuál es tu formación?</strong> [Breve resumen de estudios o cursos].</p>
-    <p><strong>¿Experiencia previa?</strong> [Proyectos realizados, prácticas, u otra motivación].</p>
+  <!-- SOBRE MI -->
+  <section id="sobre-mi" aria-labelledby="sobre-title">
+    <div class="container about">
+      <div>
+        <h2 id="sobre-title" class="section-title">Sobre mí</h2>
+        <p class="section-desc">Me interesa la automatización industrial, la ciberseguridad y el desarrollo web. Disfruto documentar procesos y convertir ideas en prototipos funcionales.
+        </p>
+        <ul>
+          <li>🎓 Ing. en Control e Instrumentación (UTFSM)</li>
+          <li>🔧 Experiencia con energías renovables, inversores FV y comunicaciones industriales</li>
+          <li>💻 Front‑end: semántica, accesibilidad, performance y buenas prácticas</li>
+        </ul>
+        <div class="tags" style="margin-top:12px">
+          <span class="tag">Autocad</span>
+          <span class="tag">LoRa</span>
+          <span class="tag">Docker básico</span>
+          <span class="tag">Windows Server</span>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" alt="Foto representativa de trabajo técnico con laptop y componentes" loading="lazy" />
+    </div>
   </section>
 
-  <section id="proyectos">
-    <h2>Proyectos</h2>
-    <p>Aquí muestro uno de mis proyectos destacados de la carrera:</p>
-    <ul>
-      <li>
-        <a href="[link a tu proyecto]" target="_blank">Proyecto destacado</a>  
-        – Breve descripción de qué hiciste y qué aprendiste.
-      </li>
-    </ul>
+  <!-- PROYECTOS -->
+  <section id="proyectos" aria-labelledby="proj-title">
+    <div class="container">
+      <h2 id="proj-title" class="section-title">Proyectos y desafíos</h2>
+      <p class="section-desc">Una selección breve. Más en mi GitHub.</p>
+      <div class="grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="Dashboard oscuro en pantalla" loading="lazy">
+          <div class="content">
+            <h3 class="title">Dashboard fotovoltaico</h3>
+            <p>Lectura de datos por RS485/Modbus y visualización web. Enfoque en confiabilidad y UX.</p>
+            <div class="tags">
+              <span class="tag">Modbus RTU</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Charts</span>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/tu-usuario/proyecto-dashboard" target="_blank" rel="noopener">Código</a>
+            <a class="link" href="#" aria-disabled="true">Demo</a>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1527443224154-c4f2a9fd792d?q=80&w=1200&auto=format&fit=crop" alt="Tarjetas con código y notas" loading="lazy">
+          <div class="content">
+            <h3 class="title">Auditoría de red casera</h3>
+            <p>Inventario de dispositivos, endurecimiento básico y segmentación con VLAN.</p>
+            <div class="tags">
+              <span class="tag">Ciberseguridad</span>
+              <span class="tag">Nmap</span>
+              <span class="tag">VLAN</span>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/tu-usuario/auditoria-red" target="_blank" rel="noopener">Código</a>
+            <a class="link" href="#" aria-disabled="true">Demo</a>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" alt="Prototipo con sensores" loading="lazy">
+          <div class="content">
+            <h3 class="title">Gateway LoRa ▶ RS485</h3>
+            <p>Prueba de concepto para puente inalámbrico hacia PLC con control manual y alarmas.</p>
+            <div class="tags">
+              <span class="tag">LoRa</span>
+              <span class="tag">PLC</span>
+              <span class="tag">RS485</span>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/tu-usuario/lora-rs485" target="_blank" rel="noopener">Código</a>
+            <a class="link" href="#" aria-disabled="true">Demo</a>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Puedes contactarme en:</p>
-    <ul>
-      <li>Email: <a href="mailto:tucorreo@ejemplo.com">tucorreo@ejemplo.com</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/tuusuario" target="_blank">linkedin.com/in/tuusuario</a></li>
-      <li>GitHub: <a href="https://github.com/tuusuario" target="_blank">github.com/tuusuario</a></li>
-    </ul>
+  <!-- CONTACTO -->
+  <section id="contacto" aria-labelledby="contact-title">
+    <div class="container">
+      <h2 id="contact-title" class="section-title">Contacto</h2>
+      <p class="section-desc">¿Tienes una oportunidad o feedback? Hablemos.</p>
+      <form class="card" style="padding:18px; gap:12px" action="https://formspree.io/f/xxxxxxx" method="POST">
+        <label>Nombre
+          <input required name="nombre" class="field" placeholder="Tu nombre" />
+        </label>
+        <label>Email
+          <input required name="email" type="email" class="field" placeholder="tunombre@email.com" />
+        </label>
+        <label>Mensaje
+          <textarea required name="mensaje" class="field" rows="5" placeholder="Cuéntame sobre tu proyecto"></textarea>
+        </label>
+        <button class="btn primary" type="submit">Enviar mensaje</button>
+      </form>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 Portafolio de [Tu Nombre] | Diseñado con buenas prácticas</p>
+    <div class="container foot">
+      <div>© <span id="year"></span> Aníbal Solar — "Construye con ética, duerme tranquilo."</div>
+      <div class="social">
+        <a class="kbd" href="https://github.com/tu-usuario" target="_blank" rel="noopener">GitHub</a>
+        <a class="kbd" href="https://www.linkedin.com/in/tu-perfil" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="kbd" href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
   </footer>
 
+  <style>
+    /* Inputs */
+    .field{width:100%; margin-top:6px; padding:12px 14px; border-radius:12px; border:1px solid var(--stroke); background:#0e1730; color:var(--text)}
+    .field:focus{outline: 2px solid #264cff; outline-offset:3px}
+    form.card{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    form.card label{display:flex; flex-direction:column; gap:6px}
+    form.card label:nth-child(3){grid-column:1/-1}
+    form.card button{grid-column:1/-1; justify-self:start}
+    @media (max-width:700px){ form.card{grid-template-columns:1fr} }
+  </style>
+
   <script>
-    function mostrar(seccion) {
-      // Ocultar todas las secciones
-      document.querySelectorAll("section").forEach(s => {
-        s.classList.remove("activo");
-      });
-      // Mostrar la sección seleccionada
-      document.getElementById(seccion).classList.add("activo");
-    }
+    // Año dinámico en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Marcar link activo al hacer scroll (scrollspy mini)
+    const sections = [...document.querySelectorAll('section, header')];
+    const menuLinks = [...document.querySelectorAll('.menu a')];
+    const map = new Map(sections.map(s => [s.id || 'inicio', s]));
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          const id = entry.target.id || 'inicio';
+          menuLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+        }
+      })
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.1 });
+    sections.forEach(s => obs.observe(s));
   </script>
 </body>
 </html>
+
